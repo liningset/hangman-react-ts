@@ -6,7 +6,7 @@ import { HangmanKeyboard } from "./HangmanKeyboard";
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState<string>(
-    words[Math.floor(Math.random() * words.length)].toUpperCase()
+    words[Math.floor(Math.random() * words.length)].toUpperCase(),
   );
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
@@ -23,10 +23,10 @@ function App() {
 
   function revealAnswer(): void {
     const lettersOnBoard = document.querySelectorAll<HTMLSpanElement>(
-      ".letter > span > span"
+      ".letter > span > span",
     );
     lettersOnBoard.forEach(
-      (letterDOM) => (letterDOM.style.visibility = "visible")
+      (letterDOM) => (letterDOM.style.visibility = "visible"),
     );
   }
 
